@@ -30,13 +30,16 @@ export default function Home() {
             });
 
         //send a post req to send SMS
-        const sms = await fetch("http://localhost:5999/send-sms", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({ phone, message }),
-        });
+        const sms = await fetch(
+            "http://vfzwlkqneu.us08.qoddiapp.com/send-sms",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({ phone, message }),
+            }
+        );
 
         //check if sms was sent
         if (sms.ok) {
